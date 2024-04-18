@@ -1,2 +1,1 @@
-# waterbin-ui
-Design System, Storybook test 레포지토리  
+디자인 시스템 적용 테스트
