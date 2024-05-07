@@ -1,5 +1,7 @@
-import './Button.module.scss';
+import styles from './Button.module.scss';
+import classNames from 'classnames/bind';
 
+const cx = classNames.bind(styles);
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -33,23 +35,11 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
+  const mode = primary ? 'primary' : 'secondary';
+
   return (
-    <button
-      type='button'
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
-      )}
-      {...props}
-    >
+    <button type='button' className={cx('button', `${size}`, mode)} {...props}>
       {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
     </button>
   );
 };

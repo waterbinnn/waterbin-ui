@@ -8,9 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "style-dictionary": "style-dictionary build"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@tokens-studio/sd-transforms": "^0.15.2",
     "classnames": "^2.5.1",
     "next": "14.2.2",
     "react": "^18",
@@ -34,6 +37,7 @@
     "eslint-config-next": "14.2.2",
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.0.8",
+    "style-dictionary": "^3.9.2",
     "typescript": "^5"
   }
 }
