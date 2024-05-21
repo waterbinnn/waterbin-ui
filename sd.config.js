@@ -3,7 +3,7 @@ const StyleDictionary = require('style-dictionary').extend({
   platforms: {
     scss: {
       transformGroup: 'scss',
-      buildPath: 'build/scss/',
+      buildPath: 'src/styles/scss/',
       files: [
         {
           format: 'scss/variables',
