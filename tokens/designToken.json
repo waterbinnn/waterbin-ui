@@ -1,5 +1,5 @@
 {
-  "colors": {
+  "fondations": {
     "colors": {
       "black": {
         "value": "#000000",
@@ -91,9 +91,7 @@
         "value": "#AC8E68",
         "type": "color"
       }
-    }
-  },
-  "spacing": {
+    },
     "spacing": {
       "4-xs": {
         "value": "2px",
@@ -148,8 +146,7 @@
   "$themes": [],
   "$metadata": {
     "tokenSetOrder": [
-      "colors",
-      "spacing"
+      "fondations"
     ]
   }
 }
