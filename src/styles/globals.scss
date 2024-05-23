@@ -1,0 +1,12 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#__next,
+html,
+body {
+  box-sizing: border-box;
+  font-weight: $regular;
+}
