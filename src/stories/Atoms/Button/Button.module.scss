@@ -8,8 +8,8 @@ button {
   line-height: 1;
 
   &.primary {
-    color: white;
-    background-color: #1ea7fd;
+    color: $colors-white;
+    background-color: $colors-blue;
   }
 
   &.secondary {
