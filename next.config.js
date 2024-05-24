@@ -1,10 +1,10 @@
+/** @type {import('next').NextConfig} */
 const path = require('path');
 
-/** @type {import('next').NextConfig} */
-
-const nextConfig = {
+module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
+    prependData: `@import "./common/_variables.scss";`,
   },
   webpack(config) {
     config.module.rules.push(
@@ -23,10 +23,20 @@ const nextConfig = {
             },
           },
         ],
-      }
+      },
+      
     );
     return config;
   },
+  distDir: '.next',
+  typescript: {},
+  serverRuntimeConfig: {
+    PROJECT_ROOT: __dirname,
+  },
+  output: 'standalone',
+  trailingSlash: false,
+  swcMinify: true,
+  compiler: {
+    reactRemoveProperties: { properties: ['^data-cy$'] },
+  },
 };
-
-export default nextConfig;
