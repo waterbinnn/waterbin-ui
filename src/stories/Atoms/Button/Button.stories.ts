@@ -5,7 +5,7 @@ const meta = {
   title: 'Atoms/Button',
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: 'centered',   
   },
   tags: ['autodocs'],
   argTypes: {
