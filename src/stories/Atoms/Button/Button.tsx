@@ -19,7 +19,7 @@ export const Button = forwardRef<ButtonExtends, ButtonType>(
       hasIconOnly = false,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const { styled } = useStyle(styles);
     const btnStyle = kind === 'primary' ? 'primary' : 'secondary';
@@ -31,7 +31,7 @@ export const Button = forwardRef<ButtonExtends, ButtonType>(
         {children}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = 'Button';
