@@ -11,14 +11,29 @@ module.exports = {
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
     {
-      name: "@storybook/addon-styling",
+      name: '@storybook/addon-styling-webpack',
       options: {
-        sass: {          
-          implementation: require("sass"),
-          prependData: `@import "@/styles/common/_variables.scss";`
-        }
-    }
-  }
+        rules: [
+          {
+            test: /\.scss$/,
+            use: [
+              'style-loader',
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  implementation: require('sass'),
+                  additionalData: `@import "src/styles/common/_variables.scss";`,
+                  sassOptions: {
+                    includePaths: [path.resolve(__dirname, '../node_modules')],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
   ],
 
   framework: {
@@ -31,16 +46,35 @@ module.exports = {
   webpackFinal: (config) => {
     config.resolve.alias = {
       ...config.resolve?.alias,
-      '@': [path.resolve(__dirname, '../src/'), path.resolve(__dirname, '../')],
+      '@': path.resolve(__dirname, '../src/'),
     };
     config.resolve.roots = [
       path.resolve(__dirname, '../public'),
-      'node_modules',
+      path.resolve(__dirname, '../node_modules'),
     ];
+    config.module.rules.push(
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.ts$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+              onlyCompileBundledFiles: true,
+            },
+          },
+        ],
+        exclude: path.resolve(__dirname, 'node_modules'),
+      },
+    );
     return config;
   },
 
-  docs: {  
+  docs: {
     autodocs: 'tag',
   },
 };
