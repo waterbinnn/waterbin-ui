@@ -151,8 +151,6 @@
   },
   "$themes": [],
   "$metadata": {
-    "tokenSetOrder": [
-      "foundations"
-    ]
+    "tokenSetOrder": ["foundations"]
   }
 }
