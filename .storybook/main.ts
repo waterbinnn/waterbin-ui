@@ -23,7 +23,7 @@ module.exports = {
                 loader: 'sass-loader',
                 options: {
                   implementation: require('sass'),
-                  additionalData: `@import "src/styles/common/_variables.scss";`,
+                  additionalData: `@import "build/scss/_variables.scss";`,
                   sassOptions: {
                     includePaths: [path.resolve(__dirname, '../node_modules')],
                   },
