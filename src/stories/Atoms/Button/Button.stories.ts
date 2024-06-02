@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import { Button } from '@/components';
 
 const meta = {
   title: 'Atoms/Button',
@@ -9,9 +9,9 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    kind: {
+    color: {
       options: ['primary', 'secondary', 'outline'],
-      description: '스타일 타입',
+      description: 'color type',
       control: { type: 'radio' },
     },
     size: {
@@ -48,7 +48,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    kind: 'primary',
+    color: 'primary',
     children: '버튼',
     size: 'medium',
     disabled: false,

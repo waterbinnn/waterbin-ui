@@ -1,0 +1,69 @@
+%button {
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+%small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+
+%medium {
+  font-size: 14px;
+  padding: 12px 18px;
+}
+
+%large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
+
+%primary {
+  background-color: $colors-blue;
+  color: $colors-white;
+}
+
+%secondary {
+  background-color: $colors-green;
+  color: $colors-white;
+}
+
+.button {
+  @extend %button;
+
+  &.small {
+    @extend %small;
+  }
+
+  &.medium {
+    @extend %medium;
+  }
+
+  &.text {
+    color: $colors-gray-900;
+    background-color: transparent;
+  }
+
+  &.solid {
+    border-radius: 4px;
+  }
+
+  &.primary {
+    @extend %primary;
+  }
+
+  &.secondary {
+    @extend %secondary;
+  }
+
+  &.icon {
+    padding: 8px 12px;
+
+    &-only {
+      padding: 6px 6px;
+    }
+  }
+}

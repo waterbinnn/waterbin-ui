@@ -5,7 +5,8 @@ type ButtonExtends = ButtonHTMLAttributes<HTMLButtonElement> &
 
 interface ButtonType extends ButtonExtends {
   size?: 'small' | 'medium' | 'large';
-  kind?: 'primary' | 'secondary' | 'outline';
+  styleType?: 'solid' | 'text' | 'icon' | 'link';
+  color?: 'primary' | 'secondary' | 'outline';
   disabled?: boolean;
   loading?: boolean;
   classNames?: string;

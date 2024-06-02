@@ -1,4 +1,5 @@
 import { useStyle } from '@/hooks';
+
 import styles from './Button.module.scss';
 import { ButtonExtends, ButtonType } from './ButtonType';
 import { forwardRef } from 'react';
@@ -8,7 +9,8 @@ export const Button = forwardRef<ButtonExtends, ButtonType>(
     {
       type,
       size = 'medium',
-      kind = 'primary',
+      styleType = 'solid',
+      color = 'primary',
       children,
       classNames,
       disabled = false,
@@ -21,11 +23,16 @@ export const Button = forwardRef<ButtonExtends, ButtonType>(
     },
     ref,
   ) => {
-    const { styled } = useStyle(styles);
-    const btnStyle = kind === 'primary' ? 'primary' : 'secondary';
+    const { styled: cx } = useStyle(styles);
 
-    const classes = styled('button', `${size}`, disabled, btnStyle, classNames);
+    const classes = cx('button', size, styleType, color, disabled, classNames, {
+      'icon-only': hasIconOnly,
+    });
+    //클래스 명 : button-size-style-color
 
+    //button-medium-solid-primary
+    //button-large-text
+    //button-icon / button-icon-only
     return (
       <button type={type} className={classes} {...rest}>
         {children}
