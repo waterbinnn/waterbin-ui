@@ -141,6 +141,14 @@
       "type": "spacing"
     }
   },
+  "typography": {
+    "h1": {
+      "value": {
+        "fontSize": "52px"
+      },
+      "type": "typography"
+    }
+  },
   "$themes": [],
   "$metadata": {
     "tokenSetOrder": ["foundations"]
