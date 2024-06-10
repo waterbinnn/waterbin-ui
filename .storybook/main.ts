@@ -44,9 +44,10 @@ module.exports = {
   },
 
   webpackFinal: (config) => {
+    config.resolve.modules = [path.resolve(__dirname, '../src'), 'node_modules'];
     config.resolve.alias = {
-      ...config.resolve?.alias,
-      '@': path.resolve(__dirname, '../src/'),
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, '../src'),
     };
     config.resolve.roots = [
       path.resolve(__dirname, '../public'),
