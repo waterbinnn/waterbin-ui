@@ -22,13 +22,13 @@
 }
 
 %primary {
-  background-color: $colors-blue;
-  color: $colors-white;
+  background-color: $blue;
+  color: $white;
 }
 
 %secondary {
-  background-color: $colors-green;
-  color: $colors-white;
+  background-color: $green;
+  color: $white;
 }
 
 .button {
@@ -43,7 +43,7 @@
   }
 
   &.text {
-    color: $colors-gray-900;
+    color: $gray-900;
     background-color: transparent;
   }
 

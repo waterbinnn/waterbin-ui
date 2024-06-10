@@ -1,5 +1,4 @@
-import { useStyle } from '@/hooks';
-
+import { useStyle } from 'hooks';
 import styles from './Button.module.scss';
 import { ButtonExtends, ButtonType } from './ButtonType';
 import { forwardRef } from 'react';
