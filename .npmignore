@@ -1,0 +1,62 @@
+# 디렉토리
+stories/
+dist/
+node_modules/
+.next/
+.storybook/
+.out/
+.build/
+.coverage/
+
+# 설정 파일
+.git/
+.github/
+.husky/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+.vercel
+
+# 빌드 도구 및 설정
+webpack.config.js
+
+# 로그 파일
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 캐시 파일
+*.cache
+.rollup.cache
+
+# ESLint & Prettier 설정
+.eslintrc.json
+.eslintignore
+.prettierignore
+.prettierrc.json
+
+# Babel 설정
+.babelrc
+
+# Git 설정
+.gitignore
+
+# 소스 맵
+*.map
+
+# TypeScript 파일
+*.ts
+*.tsbuildinfo
+next-env.d.ts
+
+# Miscellaneous
+.DS_Store
+*.pem
+
+# Local environment files
+.env*.local
+
+# Storybook
+*storybook.log
+storybook-static

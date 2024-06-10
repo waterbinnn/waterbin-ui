@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
-    prependData: `@import "./common/_variables.scss";`,
+    prependData: `@import "build/scss/_variables.scss";`,
   },
   webpack(config) {
     config.module.rules.push(
@@ -24,8 +24,8 @@ module.exports = {
           },
         ],
       },
-      
     );
+
     return config;
   },
   distDir: '.next',

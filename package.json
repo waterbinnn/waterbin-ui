@@ -1,30 +1,65 @@
 {
-  "name": "waterbin-ui",
+  "name": "waterbin-ui-kit",
+  "author": "Subin Lee",
+  "description": "components for waterbin, contact ewaterbinn@gmail.com",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "style": "dist/styles.css",
+  "files": [
+    "dist/*"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "style-dictionary": "style-dictionary build"
+    "style-dictionary": "style-dictionary build",
+    "transform-token": "npx token-transformer tokens/designToken.json tokens/transformed.json  --expandTypography=true"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.24.6",
+    "@babel/preset-react": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.6",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-sucrase": "^5.0.2",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/addon-styling-webpack": "^1.0.0",
     "@storybook/preset-scss": "^1.0.3",
     "@svgr/webpack": "^8.1.0",
-    "@tokens-studio/sd-transforms": "^0.15.2",
+    "@tokens-studio/sd-transforms": "^0.16.1",
     "classnames": "^2.5.1",
     "css-loader": "5.2.6",
+    "dts": "^0.1.1",
     "next": "14.2.2",
-    "react": "^18",
-    "react-dom": "^18",
+    "pkg": "^5.8.1",
+    "postcss": "^8.4.38",
+    "postcss-css-variables": "^0.19.0",
     "resolve-url-loader": "^5.0.0",
+    "rollup": "^4.18.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.77.2",
     "sass-loader": "10.1.1",
     "style-loader": "2.0.0",
+    "token-transformer": "^0.0.33",
     "ts-loader": "9.5.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0"
   },
@@ -46,9 +81,15 @@
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.0.8",
     "style-dictionary": "^3.9.2",
-    "typescript": "^5"
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
   },
   "resolutions": {
     "jackspeak": "2.1.1"
+  },
+  "peerDependencies": {
+    "next": "14.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
