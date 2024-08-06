@@ -8,7 +8,7 @@ export const Button = forwardRef<ButtonExtends, ButtonType>(
     {
       type,
       size = 'medium',
-      styleType = 'solid',
+      styleType,
       color = 'primary',
       children,
       classNames,

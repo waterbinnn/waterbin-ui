@@ -5,24 +5,25 @@ export default function Home() {
     <main>
       <h1>main page</h1>
       <div>
-        <Button size="small">Button</Button>
+        <Button size="small">Small</Button>
         <Button size="medium" color="secondary">
-          Button
+          medium
         </Button>
       </div>
 
       <div>
         <Button styleType="text" size="small">
-          Button
+          small text
         </Button>
-        <Button color="secondary">Button</Button>
+        <Button color="secondary">secondary</Button>
+        <Button styleType="solid">solid</Button>
         <Button styleType="icon" hasIconOnly>
           🍔
         </Button>
         <Button styleType="icon" color="secondary">
           🍔 Burger
         </Button>
-        <Button color="secondary">Button</Button>
+        <Button color="primary">primary large</Button>
       </div>
     </main>
   );
